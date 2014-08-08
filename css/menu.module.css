@@ -1,0 +1,120 @@
+@charset "utf-8";
+.m__wrap {
+	width            : auto;
+	min-width        : 320px;
+	background-color : #ddd;
+	position         : relative;
+	overflow-x       : hidden;
+	min-height       : 100%;
+}
+
+.m__main {
+	min-width           : 300px;
+	height              : 100%;
+	position            : relative;
+	z-index             : 1;
+	backface-visibility : hidden;
+}
+
+.m__menu {
+	position            : absolute;
+	top                 : 0;
+	z-index             : 0;
+	backface-visibility : hidden;
+}
+
+.m__mask {
+	position : absolute;
+	top      : 0;
+	right    : 0;
+	bottom   : 0;
+	left     : 0;
+	z-index  : -1;
+}
+
+.show_menu {
+	position : relative;
+	overflow : hidden;
+}
+
+.show_menu .m__mask {
+	z-index : 11;
+}
+
+.show_menu .m__main {
+	z-index : 10;
+}
+
+.show_menu .m__menu {
+	z-index : 9;
+}
+
+.show_menu .m__menu-box {
+	height                     : inherit;
+	overflow-y                 : auto;
+	-webkit-overflow-scrolling : touch;
+}
+
+/*以下非必要class 應用時可刪除*/
+.fl {
+	float : left;
+}
+
+.fr {
+	float : right;
+}
+
+h1 {
+	font-size  : 30px;
+	text-align : center;
+	color      : #fff;
+	clear      : both;
+	padding    : 10px;
+}
+
+.m__main {
+	background-color : #FF851B;
+}
+
+.m__btn {
+	width           : 64px;
+	height          : 64px;
+	background      : url("../images/plus.png") no-repeat;
+	background-size : 64px auto;
+}
+
+.m__menu {
+	background-color : #0074D9;
+	color            : #fff;
+}
+
+.test_img {
+	padding       : 0 10px;
+	margin-bottom : 10px;
+}
+
+img {
+	max-width : 100%;
+}
+
+nav {
+}
+
+nav a {
+	display         : block;
+	padding-left    : 20px;
+	line-height     : 40px;
+	font-size       : 16px;
+	color           : #fff;
+	text-decoration : none;
+	border-top      : 1px solid #79c1ff;
+	border-bottom   : 1px solid #004179;
+}
+
+nav a:first-child {
+	border-top : none;
+}
+
+nav a:last-child {
+	border-bottom : none;
+}

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>js\menu.module.js - Documenting JavaScript with YUIDoc</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="../assets/css/logo.png" title="Documenting JavaScript with YUIDoc"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/FModuleMenu.html">FModuleMenu</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: js\menu.module.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * 手機端框架 - 切換目錄顯隱
+ *
+ * @class FModuleMenu
+ * @constructor
+*/
+
+function FModuleMenu(params) {
+
+	var _this = this;
+
+	var defaults = {
+		direction : &#x27;left&#x27;, //menu所在位置
+		width     : 230,    //menu寬度
+		bAnimate: true,   //是否啓用css3動畫滑動
+		duration: 200,      //完成過渡效果需要多少毫秒
+		timingFunction: &#x27;ease-out&#x27;, //過渡動畫類型: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n);
+		bInnerScroll : true   //側欄是否內部滾動，推薦true
+	};
+
+	params = params || {};
+	for (var prop in defaults) {
+		if (prop in params &amp;&amp; typeof params[prop] === &#x27;object&#x27;) {
+			for (var subProp in defaults[prop]) {
+				if (!(subProp in params[prop])) {
+					params[prop][subProp] = defaults[prop][subProp];
+				}
+			}
+		}
+		else if (!(prop in params)) {
+			params[prop] = defaults[prop];
+		}
+	}
+
+	//定義所需變量 start
+	_this.params = params;
+
+	_this.WRAP = $(&#x27;#wrap&#x27;);
+	_this.MAIN = $(&#x27;#main&#x27;);
+	_this.MENU = $(&#x27;#menu&#x27;);
+	_this.MENUBTN = $(&#x27;#menuBtn&#x27;);
+	_this.BODY = $(&#x27;html&#x27;);
+	_this.MAINMASK = $(&#x27;#mainMask&#x27;);
+	_this.eClick = &#x27;ontouchstart&#x27; in window ? &#x27;touchend&#x27; : &#x27;click&#x27;;
+}
+
+FModuleMenu.prototype = {
+	constructor: FModuleMenu,
+	init       : function () {
+		var _this = this,
+		    _params = _this.params,
+		    cssText_menu = &#x27;.m__menu{&#x27; +
+			    &#x27;width: &#x27; + _params.width + &#x27;px;&#x27; +
+			    &#x27;height: 100%;&#x27; +
+			    &#x27;}&#x27;;
+
+		if (_params.direction === &#x27;left&#x27;) {
+			cssText_menu += &#x27;.m__menu{&#x27; +
+				&#x27;left: 0;&#x27; +
+				&#x27;}&#x27; +
+				&#x27;.show_menu .m__main{&#x27; +
+				&#x27;transform: translate3d(&#x27; + _params.width + &#x27;px,0,0);&#x27; +
+				&#x27;}&#x27;;
+		} else {
+			cssText_menu += &#x27;.m__menu{&#x27; +
+				&#x27;right: 0;&#x27; +
+				&#x27;}&#x27; +
+				&#x27;.show_menu .m__main{&#x27; +
+				&#x27;transform: translate3d(-&#x27; + _params.width + &#x27;px,0,0);&#x27; +
+				&#x27;}&#x27;
+		}
+
+		if (!!_params.bAnimate) {
+			cssText_menu += &#x27;.m__main{&#x27; +
+				&#x27;transition:transform &#x27; + _params.duration + &#x27;ms &#x27; + _params.timingFunction + &#x27; 0;&#x27; +
+				&#x27;}&#x27;;
+		}
+
+		//menu 內部 scroll
+		if (!!_params.bInnerScroll) {
+			cssText_menu += &#x27;.m__wrap{&#x27; +
+				&#x27;height:100%;&#x27; +
+				&#x27;overflow:hidden;&#x27; +
+				&#x27;}&#x27; +
+				&#x27;.show_menu,.show_menu body{&#x27; +
+				&#x27;height:100%;&#x27; +
+				&#x27;}&#x27;;
+		} else {
+			cssText_menu += &#x27;.show_menu body{&#x27; +
+				&#x27;height:100%;&#x27; +
+				&#x27;overflow: visible;&#x27; +
+				&#x27;}&#x27; +
+				&#x27;.show_menu .m__wrap{&#x27; +
+				&#x27;height: inherit;&#x27; +
+				&#x27;}&#x27; +
+				&#x27;.show_menu .m__menu{&#x27; +
+				&#x27;height: 100%;&#x27; +
+				&#x27;}&#x27;;
+		}
+
+		_this.insertCSS(cssText_menu);
+		_this.menuEffect();
+
+	},
+	insertCSS  : function (rule) {
+		var head = document.head || document.getElementsByTagName(&#x27;head&#x27;)[0];
+
+		if (!!head.getElementsByTagName(&#x27;style&#x27;).length) {
+			var style = head.getElementsByTagName(&#x27;style&#x27;)[0];
+			if (style.styleSheet) {
+				style.styleSheet.cssText = rule;
+			} else {
+				style.appendChild(document.createTextNode(rule));
+			}
+		} else {
+			var style = document.createElement(&#x27;style&#x27;);
+
+			style.type = &#x27;text/css&#x27;;
+			if (style.styleSheet) {
+				style.styleSheet.cssText = rule;
+			} else {
+				style.appendChild(document.createTextNode(rule));
+			}
+
+			head.appendChild(style);
+		}
+
+	},
+	menuEffect : function () {
+		var _this = this,
+		    bMenuShow = false,
+			_menu_box = _this.MENU.find(&#x27;.m__menu-box&#x27;);
+
+		_this.MENUBTN.on(_this.eClick, function () {
+			_this.BODY.addClass(&#x27;show_menu&#x27;);
+			bMenuShow = !bMenuShow;
+		});
+
+		_this.MAINMASK.on(_this.eClick, function () {
+			_this.BODY.removeClass(&#x27;show_menu&#x27;);
+			bMenuShow = !bMenuShow;
+
+		});
+
+	}
+}
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

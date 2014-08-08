@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wap menu module</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/menu.module.css">
+</head>
+<body>
+	<div class="m__wrap" id="wrap">
+		<div class="m__main" id="main">
+			<a class="m__btn fr" href="javascript:;" id="menuBtn"></a>
+			<h1>main</h1>
+			<figure class="test_img">
+				<img src="http://lorempixel.com/640/360/food">
+			</figure>
+			<figure class="test_img">
+				<img src="http://lorempixel.com/640/360/food">
+			</figure>
+			<figure class="test_img">
+				<img src="http://lorempixel.com/640/360/food">
+			</figure>
+			<figure class="test_img">
+				<img src="http://lorempixel.com/640/360/food">
+			</figure>
+			<div class="m__mask" id="mainMask"></div>
+		</div>
+		<div class="m__menu" id="menu">
+			<div class="m__menu-box">
+				<nav>
+					<a href="javascript:;">menu-01</a>
+					<a href="javascript:;">menu-02</a>
+					<a href="javascript:;">menu-03</a>
+					<a href="javascript:;">menu-04</a>
+					<a href="javascript:;">menu-05</a>
+					<a href="javascript:;">menu-06</a>
+					<a href="javascript:;">menu-07</a>
+					<a href="javascript:;">menu-08</a>
+					<a href="javascript:;">menu-09</a>
+					<a href="javascript:;">menu-10</a>
+					<a href="javascript:;">menu-11</a>
+					<a href="javascript:;">menu-12</a>
+					<a href="javascript:;">menu-13</a>
+					<a href="javascript:;">menu-14</a>
+					<a href="javascript:;">menu-15</a>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<script src="js/prefixfree.min.js"></script>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/menu.module.js"></script>
+	<script>
+		var fModuleMenu = new FModuleMenu({
+			direction: 'right',
+			bInnerScroll: false
+		});
+		fModuleMenu.init();
+	</script>
+</body>
+</html>
