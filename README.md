@@ -32,29 +32,30 @@
 `direction`：menu所在位置<br/>
 _type_: String<br/>
 _value_: 'left' or 'right'<br/>
-_default_: 'left'<br/>
+_default_: <b style="color:#f00">'left'</b>
 
 `width`：menu寬度<br/>
 _type_: Number<br/>
 _value_: all number<br/>
-_default_: 230<br/>
+_default_: <b style="color:#f00">230</b>
 
 `bAnimate`：是否啓用css3動畫滑動<br/>
 _type_: Boolean<br/>
 _value_: true or false<br/>
-_default_: true<br/>
+_default_: <b style="color:#f00">true<br/>
 
 `duration`：完成過渡效果需要多少毫秒(ms)<br/>
 _type_: Number<br/>
 _value_: all number<br/>
-_default_: 200<br/>
+_default_: <b style="color:#f00">200<br/>
 
 `timingFunction`：定義過渡效果的速度曲線<br/>
 _type_: String<br/>
-_value_: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)[CSS3 transition-timing-function 属性](http://www.w3school.com.cn/cssref/pr_transition-timing-function.asp)<br/>
-_default_: 'ease-out'<br/>
+_value_: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)<br/>請參考：[CSS3 transition-timing-function 属性]
+(http://www.w3school.com.cn/cssref/pr_transition-timing-function.asp)<br/>
+_default_: <b style="color:#f00">'ease-out'</b>
 
 `bInnerScroll`：側欄是否內部滾動，推薦true<br/>
 _type_: Boolean<br/>
 _value_: true or false<br/>
-_default_: true
+_default_: <b style="color:#f00">true</b>
