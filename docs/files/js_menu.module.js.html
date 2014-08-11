@@ -91,19 +91,56 @@
  *
  * @class FModuleMenu
  * @constructor
-*/
+ * @param [params={}] {Object} 定義對象各項參數
+ */
 
 function FModuleMenu(params) {
 
 	var _this = this;
 
 	var defaults = {
-		direction : &#x27;left&#x27;, //menu所在位置
-		width     : 230,    //menu寬度
-		bAnimate: true,   //是否啓用css3動畫滑動
-		duration: 200,      //完成過渡效果需要多少毫秒
-		timingFunction: &#x27;ease-out&#x27;, //過渡動畫類型: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n);
-		bInnerScroll : true   //側欄是否內部滾動，推薦true
+		/**
+		 * &#x60;direction&#x60;：menu所在位置
+		 * @property direction
+		 * @type String
+		 * @default &#x27;left&#x27;
+		 */
+		direction : &#x27;left&#x27;,
+		/**
+		 * &#x60;width&#x60;：menu寬度
+		 * @property width
+		 * @type Number
+		 * @default 230
+		 */
+		width     : 230,
+		/**
+		 * &#x60;bAnimate&#x60;：是否啓用css3動畫滑動
+		 * @property bAnimate
+		 * @type Boolean
+		 * @default true
+		 */
+		bAnimate: true,
+		/**
+		 * &#x60;duration&#x60;：完成過渡效果需要多少毫秒
+		 * @property duration
+		 * @type Number
+		 * @default 200
+		 */
+		duration: 200,
+		/**
+		 * &#x60;timingFunction&#x60;：過渡動畫類型: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)
+		 * @property timingFunction
+		 * @type String
+		 * @default &#x27;ease-out&#x27;
+		 */
+		timingFunction: &#x27;ease-out&#x27;,
+		/**
+		 * &#x60;bInnerScroll&#x60;：側欄是否內部滾動，推薦true
+		 * @property bInnerScroll
+		 * @type Boolean
+		 * @default true
+		 */
+		bInnerScroll : true
 	};
 
 	params = params || {};
@@ -134,6 +171,11 @@ function FModuleMenu(params) {
 
 FModuleMenu.prototype = {
 	constructor: FModuleMenu,
+	/**
+	 * &#x60;init&#x60;：實例初始化
+	 * @method init
+	 * @static
+	 */
 	init       : function () {
 		var _this = this,
 		    _params = _this.params,
@@ -190,6 +232,11 @@ FModuleMenu.prototype = {
 		_this.menuEffect();
 
 	},
+	/**
+	 * &#x60;insertCSS&#x60;：HTML內插入style方法
+	 * @method insertCSS
+	 * @static
+	 */
 	insertCSS  : function (rule) {
 		var head = document.head || document.getElementsByTagName(&#x27;head&#x27;)[0];
 
@@ -214,6 +261,11 @@ FModuleMenu.prototype = {
 		}
 
 	},
+	/**
+	 * &#x60;menuEffect&#x60;：定義menu顯示及隱藏事件
+	 * @method menuEffect
+	 * @static
+	 */
 	menuEffect : function () {
 		var _this = this,
 		    bMenuShow = false,

@@ -36,10 +36,104 @@
             "file": "js\\menu.module.js",
             "line": 1,
             "description": "手機端框架 - 切換目錄顯隱",
-            "is_constructor": 1
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "params",
+                    "description": "{Object} 定義對象各項參數",
+                    "optional": true
+                }
+            ]
         }
     },
     "classitems": [
+        {
+            "file": "js\\menu.module.js",
+            "line": 14,
+            "description": "`direction`：menu所在位置",
+            "itemtype": "property",
+            "name": "direction",
+            "type": "String",
+            "default": "'left'",
+            "class": "FModuleMenu"
+        },
+        {
+            "file": "js\\menu.module.js",
+            "line": 21,
+            "description": "`width`：menu寬度",
+            "itemtype": "property",
+            "name": "width",
+            "type": "Number",
+            "default": "230",
+            "class": "FModuleMenu"
+        },
+        {
+            "file": "js\\menu.module.js",
+            "line": 28,
+            "description": "`bAnimate`：是否啓用css3動畫滑動",
+            "itemtype": "property",
+            "name": "bAnimate",
+            "type": "Boolean",
+            "default": "true",
+            "class": "FModuleMenu"
+        },
+        {
+            "file": "js\\menu.module.js",
+            "line": 35,
+            "description": "`duration`：完成過渡效果需要多少毫秒",
+            "itemtype": "property",
+            "name": "duration",
+            "type": "Number",
+            "default": "200",
+            "class": "FModuleMenu"
+        },
+        {
+            "file": "js\\menu.module.js",
+            "line": 42,
+            "description": "`timingFunction`：過渡動畫類型: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)",
+            "itemtype": "property",
+            "name": "timingFunction",
+            "type": "String",
+            "default": "'ease-out'",
+            "class": "FModuleMenu"
+        },
+        {
+            "file": "js\\menu.module.js",
+            "line": 49,
+            "description": "`bInnerScroll`：側欄是否內部滾動，推薦true",
+            "itemtype": "property",
+            "name": "bInnerScroll",
+            "type": "Boolean",
+            "default": "true",
+            "class": "FModuleMenu"
+        },
+        {
+            "file": "js\\menu.module.js",
+            "line": 86,
+            "description": "`init`：實例初始化",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "class": "FModuleMenu"
+        },
+        {
+            "file": "js\\menu.module.js",
+            "line": 147,
+            "description": "`insertCSS`：HTML內插入style方法",
+            "itemtype": "method",
+            "name": "insertCSS",
+            "static": 1,
+            "class": "FModuleMenu"
+        },
+        {
+            "file": "js\\menu.module.js",
+            "line": 176,
+            "description": "`menuEffect`：定義menu顯示及隱藏事件",
+            "itemtype": "method",
+            "name": "menuEffect",
+            "static": 1,
+            "class": "FModuleMenu"
+        },
         {
             "file": "js\\prefixfree.min.js",
             "line": 1,

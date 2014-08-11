@@ -3,19 +3,56 @@
  *
  * @class FModuleMenu
  * @constructor
-*/
+ * @param [params={}] {Object} 定義對象各項參數
+ */
 
 function FModuleMenu(params) {
 
 	var _this = this;
 
 	var defaults = {
-		direction : 'left', //menu所在位置
-		width     : 230,    //menu寬度
-		bAnimate: true,   //是否啓用css3動畫滑動
-		duration: 200,      //完成過渡效果需要多少毫秒
-		timingFunction: 'ease-out', //過渡動畫類型: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n);
-		bInnerScroll : true   //側欄是否內部滾動，推薦true
+		/**
+		 * `direction`：menu所在位置
+		 * @property direction
+		 * @type String
+		 * @default 'left'
+		 */
+		direction : 'left',
+		/**
+		 * `width`：menu寬度
+		 * @property width
+		 * @type Number
+		 * @default 230
+		 */
+		width     : 230,
+		/**
+		 * `bAnimate`：是否啓用css3動畫滑動
+		 * @property bAnimate
+		 * @type Boolean
+		 * @default true
+		 */
+		bAnimate: true,
+		/**
+		 * `duration`：完成過渡效果需要多少毫秒
+		 * @property duration
+		 * @type Number
+		 * @default 200
+		 */
+		duration: 200,
+		/**
+		 * `timingFunction`：過渡動畫類型: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)
+		 * @property timingFunction
+		 * @type String
+		 * @default 'ease-out'
+		 */
+		timingFunction: 'ease-out',
+		/**
+		 * `bInnerScroll`：側欄是否內部滾動，推薦true
+		 * @property bInnerScroll
+		 * @type Boolean
+		 * @default true
+		 */
+		bInnerScroll : true
 	};
 
 	params = params || {};
@@ -46,6 +83,11 @@ function FModuleMenu(params) {
 
 FModuleMenu.prototype = {
 	constructor: FModuleMenu,
+	/**
+	 * `init`：實例初始化
+	 * @method init
+	 * @static
+	 */
 	init       : function () {
 		var _this = this,
 		    _params = _this.params,
@@ -102,6 +144,11 @@ FModuleMenu.prototype = {
 		_this.menuEffect();
 
 	},
+	/**
+	 * `insertCSS`：HTML內插入style方法
+	 * @method insertCSS
+	 * @static
+	 */
 	insertCSS  : function (rule) {
 		var head = document.head || document.getElementsByTagName('head')[0];
 
@@ -126,6 +173,11 @@ FModuleMenu.prototype = {
 		}
 
 	},
+	/**
+	 * `menuEffect`：定義menu顯示及隱藏事件
+	 * @method menuEffect
+	 * @static
+	 */
 	menuEffect : function () {
 		var _this = this,
 		    bMenuShow = false,
