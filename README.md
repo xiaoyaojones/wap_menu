@@ -51,7 +51,7 @@ __default__: 200<br/>
 
 `timingFunction`：定義過渡效果的速度曲線<br/>
 __type__: String<br/>
-__value__: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)[CSS3 transition-timing-function 属性]:(http://www.w3school.com.cn/cssref/pr_transition-timing-function.asp)<br/>
+__value__: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)[CSS3 transition-timing-function 属性](http://www.w3school.com.cn/cssref/pr_transition-timing-function.asp)<br/>
 __: 'ease-out'<br/>
 
 `bInnerScroll`：側欄是否內部滾動，推薦true<br/>
