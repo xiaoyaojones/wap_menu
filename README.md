@@ -30,31 +30,31 @@
 參數說明
 -----------------------------
 `direction`：menu所在位置
-__type__: String
-__value__: 'left' or 'right'
-__default__: 'left'
+*__type__: String
+*__value__: 'left' or 'right'
+*__default__: 'left'
 
 `width`：menu寬度
-__type__: Number
-__value__: all number
-__default__: 230
+*__type__: Number
+*__value__: all number
+*__default__: 230
 
 `bAnimate`：是否啓用css3動畫滑動
-__type__: Boolean
-__value__: true or false
-__default__: true
+*__type__: Boolean
+*__value__: true or false
+*__default__: true
 
 `duration`：完成過渡效果需要多少毫秒(ms)
-__type__: Number
-__value__: all number
-__default__: 200
+*__type__: Number
+*__value__: all number
+*__default__: 200
 
 `timingFunction`：定義過渡效果的速度曲線
-__type__: String
-__value__: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)[CSS3 transition-timing-function 属性]: http://www.w3school.com.cn/cssref/pr_transition-timing-function.asp
-__: 'ease-out'
+*__type__: String
+*__value__: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)[CSS3 transition-timing-function 属性]: http://www.w3school.com.cn/cssref/pr_transition-timing-function.asp
+*__: 'ease-out'
 
 `bInnerScroll`：側欄是否內部滾動，推薦true
-__type__: Boolean
-__value__: true or false
-__default__: true
+*__type__: Boolean
+*__value__: true or false
+*__default__: true
