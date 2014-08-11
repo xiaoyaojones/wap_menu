@@ -29,32 +29,32 @@
 
 參數說明
 -----------------------------
-`direction`：menu所在位置
-__type__: String
-__value__: 'left' or 'right'
-__default__: 'left'
+`direction`：menu所在位置<br/>
+__type__: String<br/>
+__value__: 'left' or 'right'<br/>
+__default__: 'left'<br/>
 
-`width`：menu寬度
-__type__: Number
-__value__: all number
-__default__: 230
+`width`：menu寬度<br/>
+__type__: Number<br/>
+__value__: all number<br/>
+__default__: 230<br/>
 
-`bAnimate`：是否啓用css3動畫滑動
-__type__: Boolean
-__value__: true or false
+`bAnimate`：是否啓用css3動畫滑動<br/>
+__type__: Boolean<br/>
+__value__: true or false<br/>
+__default__: true<br/>
+
+`duration`：完成過渡效果需要多少毫秒(ms)<br/>
+__type__: Number<br/>
+__value__: all number<br/>
+__default__: 200<br/>
+
+`timingFunction`：定義過渡效果的速度曲線<br/>
+__type__: String<br/>
+__value__: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)[CSS3 transition-timing-function 属性]: http://www.w3school.com.cn/cssref/pr_transition-timing-function.asp<br/>
+__: 'ease-out'<br/>
+
+`bInnerScroll`：側欄是否內部滾動，推薦true<br/>
+__type__: Boolean<br/>
+__value__: true or false<br/>
 __default__: true
-
-`duration`：完成過渡效果需要多少毫秒(ms)
-__type__: Number
-__value__: all number
-__default__: 200
-
-`timingFunction`：定義過渡效果的速度曲線
-__type__: String
-__value__: linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n)[CSS3 transition-timing-function 属性]: http://www.w3school.com.cn/cssref/pr_transition-timing-function.asp
-__: 'ease-out'
-
-`bInnerScroll`：側欄是否內部滾動，推薦true
-__type__: Boolean
-__value__: true or false
-__default__: true  
