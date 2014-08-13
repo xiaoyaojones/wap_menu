@@ -109,7 +109,27 @@
         },
         {
             "file": "js\\menu.module.js",
-            "line": 86,
+            "line": 56,
+            "description": "`cbShow`：顯示menu時執行的callback function",
+            "itemtype": "property",
+            "name": "cbShow",
+            "type": "Function",
+            "default": "null",
+            "class": "FModuleMenu"
+        },
+        {
+            "file": "js\\menu.module.js",
+            "line": 63,
+            "description": "`cbHide`：隱藏menu時執行的callback function",
+            "itemtype": "property",
+            "name": "cbHide",
+            "type": "Function",
+            "default": "null",
+            "class": "FModuleMenu"
+        },
+        {
+            "file": "js\\menu.module.js",
+            "line": 100,
             "description": "`init`：實例初始化",
             "itemtype": "method",
             "name": "init",
@@ -118,7 +138,7 @@
         },
         {
             "file": "js\\menu.module.js",
-            "line": 147,
+            "line": 161,
             "description": "`insertCSS`：HTML內插入style方法",
             "itemtype": "method",
             "name": "insertCSS",
@@ -127,7 +147,7 @@
         },
         {
             "file": "js\\menu.module.js",
-            "line": 176,
+            "line": 190,
             "description": "`menuEffect`：定義menu顯示及隱藏事件",
             "itemtype": "method",
             "name": "menuEffect",

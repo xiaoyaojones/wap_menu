@@ -12,7 +12,10 @@
 * 參考index.html or index_right_noscroll.html的框架組織
 ```
 	<div class="m__wrap" id="wrap">
-		<div class="m__main" id="main"></div>
+		<div class="m__main" id="main">
+			<a href="javascript:;" id="menuBtn"></a>
+			<div class="m__mask" id="mainMask"></div>
+		</div>
 		<div class="m__menu" id="menu">
 			<div class="m__menu-box">
 				menu內容
@@ -42,12 +45,12 @@ _default_: __230__
 `bAnimate`：是否啓用css3動畫滑動<br/>
 _type_: Boolean<br/>
 _value_: true or false<br/>
-_default_: __true<br/>
+_default_: __true__
 
 `duration`：完成過渡效果需要多少毫秒(ms)<br/>
 _type_: Number<br/>
 _value_: all number<br/>
-_default_: __200<br/>
+_default_: __200__
 
 `timingFunction`：定義過渡效果的速度曲線<br/>
 _type_: String<br/>
@@ -59,3 +62,13 @@ _default_: __'ease-out'__
 _type_: Boolean<br/>
 _value_: true or false<br/>
 _default_: __true__
+
+`cbShow`：顯示menu時執行的callback function<br/>
+_type_: Function<br/>
+_value_: Function<br/>
+_default_: __null__
+
+`cbHide`：隱藏menu時執行的callback function<br/>
+_type_: Function<br/>
+_value_: Function<br/>
+_default_: __null__

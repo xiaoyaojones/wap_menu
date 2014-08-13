@@ -52,7 +52,21 @@ function FModuleMenu(params) {
 		 * @type Boolean
 		 * @default true
 		 */
-		bInnerScroll : true
+		bInnerScroll : true,
+		/**
+		 * `cbShow`：顯示menu時執行的callback function
+		 * @property cbShow
+		 * @type Function
+		 * @default null
+		 */
+		cbShow: null,
+		/**
+		 * `cbHide`：隱藏menu時執行的callback function
+		 * @property cbHide
+		 * @type Function
+		 * @default null
+		 */
+		cbHide: null
 	};
 
 	params = params || {};
@@ -180,18 +194,24 @@ FModuleMenu.prototype = {
 	 */
 	menuEffect : function () {
 		var _this = this,
-		    bMenuShow = false,
-			_menu_box = _this.MENU.find('.m__menu-box');
+		    bMenuShow = false;
 
 		_this.MENUBTN.on(_this.eClick, function () {
 			_this.BODY.addClass('show_menu');
 			bMenuShow = !bMenuShow;
+			//顯示menu時執行所需callback
+			if ($.isFunction(_this.params.cbShow)) {
+				_this.params.cbShow();
+			}
 		});
 
 		_this.MAINMASK.on(_this.eClick, function () {
 			_this.BODY.removeClass('show_menu');
 			bMenuShow = !bMenuShow;
-
+			//隱藏menu時執行所需callback
+			if ($.isFunction(_this.params.cbHide)) {
+				_this.params.cbHide();
+			}
 		});
 
 	}
